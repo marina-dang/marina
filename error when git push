@@ -2,7 +2,15 @@ Tips to git pushG
 Given your access is ok and repo exists 
 Then run git push
 Then below errors appear:
-Connection closed by 140.82.113.3 port 443
-fatal: Could not read from remote repository.
-Please make sure you have the correct access rights
-and the repository exists.
+    Connection closed by 140.82.113.3 port 443
+    fatal: Could not read from remote repository.
+    Please make sure you have the correct access rights
+    and the repository exists.
+Solution:
+  Step1: verify 443 port: ssh -T git@host -p 443
+    If output is "ssh: connect to host github-testgpt port 443: Network is unreachable", go to next step:
+  Step2: git remote set-url origin https://github.com/marina-dang/github_auto_test.git  
+        #switch remote repo protocal to HTTPS
+  Step3: git push
+
+
