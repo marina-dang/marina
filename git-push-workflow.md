@@ -17,10 +17,10 @@ $ git push -u origin <remote branch name>
 **Overall Flow**
 ```mermaid
 sequenceDiagram
-    participant W as 工作目录
-    participant S as 暂存区
-    participant L as 本地分支
-    participant R as 远程分支
+    participant W as 工作目录(working directory)
+    participant S as 暂存区(staging area)
+    participant L as 本地分支(local branch)
+    participant R as 远程分支(remote branch)
     
     W->>S: git add .（将工作区变更放入暂存区）
     S->>L: git commit（将暂存区快照存入当前分支）
