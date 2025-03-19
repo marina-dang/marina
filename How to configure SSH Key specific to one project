@@ -1,0 +1,8 @@
+How to configure SSH Key specific to one project
+1. cd <project directory>
+2. mkdir .ssh  # if not exits
+3. ssh-keygen -t ed25519 -f ./.ssh/<project folder> -C "key namae specific for project"
+4. ## create a config file under project directory
+5. git config --local --get core.sshCommand ## verify the config
+6. cat ./.ssh/<project folder name>.pub ## view and copy the public key
+7. start https://github.com/settings/ssh/new ##open github ui to add SSH Key
