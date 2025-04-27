@@ -55,7 +55,7 @@ match food:
 
 
 # one case have multiple valuse:
-testday = input('Please input a day of week:')
+testday = input('Please input a day of week(Monday/Tueseday...):')
 match testday:
     case 'Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday':
         print('today is weekday')
@@ -64,3 +64,38 @@ match testday:
     case _:
         print('This is not a day of week')
 
+# add if statement in case:
+month = 5
+day = 4
+match day:
+    case 1|2|3|4|5 if month == 4:
+        print('It is a weekday in April')
+    case 1|2|3|4|5 if month == 5:
+        print('It is a weekday in May')
+    case _:
+        print('No match')
+
+
+year = 2025
+month = input('Input month(Jan/Feb...):')
+match month:
+    case 'Jan'|'Feb'|'Mar'|'Apr'|'May'|'Jun' if year==2025:
+        print('It is', month, 'in 2025.')
+    case 'Jan'|'Feb'|'Mar'|'Apr'|'May'|'Jun' if year==2026:
+        print('It is', month, 'in 2026.')
+    case _:
+        print('Not Found')
+
+
+# a simple holiday check:
+month = input('Input month(Jan/Feb...):')
+day = input('Input day(1/2/3...):')
+match day:
+    case '1' if month == 'Jan':
+        print('It is New Year Day')
+    case '1' if month == 'May':
+        print('It is Labor Day')
+    case '1' if month == 'Oct':
+        print('It is National Day')
+    case _:
+        print(month, day, 'is not a holiday')
