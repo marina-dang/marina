@@ -1,3 +1,33 @@
+day = 3
+match day:
+    case 1:
+        print('Sunday')
+    case 2:
+        print('Monday')
+    case 3:
+        print('Tuesday')
+# output is Tuesday
+
+day = 'Sunday'
+match day:
+    case 'Sunday':
+        print('today is weekend')
+    case 'Monday':
+        print('today is workday')
+# output is "today is weekend"
+
+day = '5'
+match day:
+    case 'Sunday':
+        print('today is weekend')
+    case 2:
+        print('today is workday')
+    case _:
+        print('the day is not found')
+# output is "the day is not found"
+# note: if 'case _' is not added, the program will ouput nothing
+
+# output depends on user input
 holiday = input("Input your tagert hodliday:")
 match holiday:
     case "New Year Day":
@@ -9,7 +39,7 @@ match holiday:
     case _:
         print("Sorry, I don't know this holiday")
 
-
+# output depends on user input
 food = input("请输入你要点的食物（burger / fries / coke / salad）：")
 match food:
     case "burger":
@@ -23,4 +53,14 @@ match food:
     case _:
         print("对不起，菜单中没有这个选项 🙁")
 
-        
+
+# one case have multiple valuse:
+testday = input('Please input a day of week:')
+match testday:
+    case 'Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday':
+        print('today is weekday')
+    case 'Sunday'|'Saturday':
+        print('today is weekend')
+    case _:
+        print('This is not a day of week')
+
